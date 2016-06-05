@@ -12,6 +12,9 @@
                     {"exportincludedirs": [
                         "include/"                        
                     ]},
+                    {"files": [
+                       "include/**" 
+                    ]},
                     {"filter": "NoCpp11",
                     "do":
                     [
