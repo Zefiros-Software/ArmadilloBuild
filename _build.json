@@ -10,6 +10,10 @@
                     {"kind": "StaticLib"},
                     {"configurations": [ "NoCpp11" ]},
                     {"language": "C++"},
+                    {"files": [
+                       "include/**.hpp",
+                       "include/armadillo" 
+                    ]},
                     {"exportincludedirs": [
                         "include/"                        
                     ]},
