@@ -18,7 +18,10 @@
                     {"filter": "NoCpp11",
                     "do":
                     [
-                        {"exportdefines": "ARMA_USE_CXX11"}
+                        {"exportdefines": [
+                            "ARMA_USE_CXX11", 
+                            "ARMA_SURPRESS_CXX11_WARNING"
+                        ]}
                     ]},
                     {"filter": "not NoCpp11",
                     "do":
