@@ -1,0 +1,18 @@
+[
+    {
+        "version": ">6.0.0 || @head",
+        "projects":
+        [
+            {
+                "project": "Armadillo",
+                "do":
+                [
+                    {"kind": "StaticLib"},
+                    {"exportincludedirs": [
+                        "include/"                        
+                    ]}
+                ]
+            }
+        ]
+    }
+]

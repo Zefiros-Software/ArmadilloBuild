@@ -1,0 +1,6 @@
+{
+    "description": "Armadillo is a high quality C++ linear algebra library, aiming towards a good balance between speed and ease of use.",
+    "keywords": ["Armadillo", "Vecors", "Matrices", "Cubeses"],
+    "website": "http://arma.sourceforge.net/",
+    "license": "Mozilla Public License (MPL) 2.0"
+}
