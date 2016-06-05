@@ -7,13 +7,11 @@
                 "project": "Armadillo",
                 "do":
                 [
-                    {"configurations": [ "NoCpp11" ]},
                     {"kind": "StaticLib"},
+                    {"configurations": [ "NoCpp11" ]},
+                    {"language": "C++"},
                     {"exportincludedirs": [
                         "include/"                        
-                    ]},
-                    {"files": [
-                       "include/**" 
                     ]},
                     {"filter": "NoCpp11",
                     "do":
