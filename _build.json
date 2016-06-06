@@ -5,9 +5,11 @@
         [
             {
                 "project": "Armadillo",
+                "options": [
+                    {"Cpp11": false}
+                ],
                 "do":
                 [
-                    {"configurations": [ "NoCpp11" ]},
                     {"kind": "StaticLib"},
                     {"exportincludedirs": [
                         "include/"                        
@@ -15,12 +17,12 @@
                     {"files": [
                        "include/**" 
                     ]},
-                    {"filter": "NoCpp11",
+                    {"filter": "options:Cpp11",
                     "do":
                     [
                         {"exportdefines": "ARMA_USE_CXX11"}
                     ]},
-                    {"filter": "not NoCpp11",
+                    {"filter": "options:not Cpp11",
                     "do":
                     [
                         {"exportdefines": "ARMA_DONT_USE_CXX11"}
