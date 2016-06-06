@@ -24,16 +24,18 @@
                     [
                         {"exportdefines": "ARMA_DONT_USE_CXX11" }
                     ]},
-                    {"filter-options": [
+                    {
+                        "filter-options": [
                         {"Cpp11": true}
-                    ],
-                    "do":
-                    [
-                        {"exportdefines": [
-                            "ARMA_USE_CXX11", 
-                            "ARMA_SURPRESS_CXX11_WARNING"
-                        ]}
-                    ]}
+                        ],
+                        "do":
+                        [
+                            {"exportdefines": [
+                                "ARMA_USE_CXX11", 
+                                "ARMA_SURPRESS_CXX11_WARNING"
+                            ]}
+                        ]
+                    }
                 ]
         
             }
