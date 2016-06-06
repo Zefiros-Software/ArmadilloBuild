@@ -6,7 +6,7 @@
             {
                 "project": "Armadillo",
                 "options": {
-                    "Cpp11": false
+                    "Cpp11": true
                 },
                 "do":
                 [
