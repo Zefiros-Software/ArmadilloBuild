@@ -21,7 +21,7 @@
                     ]},
                     {
                         "filter-options": [
-                        {"Cpp11": false}
+                            {"Cpp11": false}
                         ],
                         "do":
                         [
@@ -30,7 +30,7 @@
                     },
                     {
                         "filter-options": [
-                        {"Cpp11": true}
+                            {"Cpp11": true}
                         ],
                         "do":
                         [
