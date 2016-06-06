@@ -11,21 +11,26 @@
                 "do":
                 [
                     {"kind": "StaticLib"},
+                    {"language": "C++"},
+                    {"files": [
+                       "include/**.hpp",
+                       "include/armadillo" 
+                    ]},
                     {"exportincludedirs": [
                         "include/"                        
-                    ]},
-                    {"files": [
-                       "include/**" 
                     ]},
                     {"filter": "options:Cpp11",
                     "do":
                     [
-                        {"exportdefines": "ARMA_USE_CXX11"}
+                        {"exportdefines": "ARMA_DONT_USE_CXX11" }
                     ]},
                     {"filter": "options:not Cpp11",
                     "do":
                     [
-                        {"exportdefines": "ARMA_DONT_USE_CXX11"}
+                        {"exportdefines": [
+                            "ARMA_USE_CXX11", 
+                            "ARMA_SURPRESS_CXX11_WARNING"
+                        ]}
                     ]}
                 ]
         
