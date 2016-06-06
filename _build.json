@@ -5,9 +5,9 @@
         [
             {
                 "project": "Armadillo",
-                "options": [
-                    {"Cpp11": false}
-                ],
+                "options": {
+                    "Cpp11": false
+                },
                 "do":
                 [
                     {"kind": "StaticLib"},
