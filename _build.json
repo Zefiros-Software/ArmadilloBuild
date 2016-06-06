@@ -12,6 +12,7 @@
                 [
                     {"kind": "StaticLib"},
                     {"language": "C++"},
+                    {"headeronly": true},
                     {"files": [
                        "include/**.hpp",
                        "include/armadillo" 
