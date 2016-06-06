@@ -20,18 +20,18 @@
                         "include/"                        
                     ]},
                     {
-                        "filter-options": [
-                            {"Cpp11": false}
-                        ],
+                        "filter-options": {
+                            "Cpp11": false
+                        },
                         "do":
                         [
                             {"exportdefines": "ARMA_DONT_USE_CXX11" }
                         ]
                     },
                     {
-                        "filter-options": [
-                            {"Cpp11": true}
-                        ],
+                        "filter-options": {
+                            "Cpp11": true
+                        },
                         "do":
                         [
                             {"exportdefines": [
