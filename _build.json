@@ -5,35 +5,41 @@
         [
             {
                 "project": "Armadillo",
+                "options": {
+                    "Cpp11": true
+                },
                 "do":
                 [
                     {"kind": "StaticLib"},
-                    {"configurations": [ "NoCpp11" ]},
                     {"language": "C++"},
+                    {"headeronly": true},
                     {"files": [
                        "include/**.hpp",
                        "include/armadillo" 
                     ]},
-                    {"export": [
+                    {"export":[
                         {"includedirs": "include/"}
                     ]},
-                    {"filter": "NoCpp11",
-                    "do":
-                    [
-                        {"export": [
-                            {"defines": "ARMA_DONT_USE_CXX11"}
-                        ]}
-                    ]},
-                    {"filter": "not NoCpp11",
-                    "do":
-                    [
-                        {"export": [
-                            {"defines": [
-                                "ARMA_SURPRESS_CXX11_WARNING",
-                                "ARMA_USE_CXX11"
+                    {
+                        "filter-options": {
+                            "Cpp11": true
+                        },
+                        "do":
+                        [
+                            {"export":[
+                                {"defines": [
+                                    "ARMA_USE_CXX11", 
+                                    "ARMA_SURPRESS_CXX11_WARNING"
+                                ]}
                             ]}
-                        ]}
-                    ]}
+                        ],
+                        "otherwise":
+                        [
+                            {"export":[
+                                {"defines": "ARMA_DONT_USE_CXX11"}
+                            ]}
+                        ]
+                    }
                 ]
         
             }
