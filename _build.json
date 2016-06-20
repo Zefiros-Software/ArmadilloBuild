@@ -14,20 +14,24 @@
                        "include/**.hpp",
                        "include/armadillo" 
                     ]},
-                    {"exportincludedirs": [
-                        "include/"                        
+                    {"export": [
+                        {"includedirs": "include/"}
                     ]},
                     {"filter": "NoCpp11",
                     "do":
                     [
-                        {"exportdefines": "ARMA_DONT_USE_CXX11" }
+                        {"export": [
+                            {"defines": "ARMA_DONT_USE_CXX11"}
+                        ]}
                     ]},
                     {"filter": "not NoCpp11",
                     "do":
                     [
-                        {"exportdefines": [
-                            "ARMA_USE_CXX11", 
-                            "ARMA_SURPRESS_CXX11_WARNING"
+                        {"export": [
+                            {"defines": [
+                                "ARMA_SURPRESS_CXX11_WARNING",
+                                "ARMA_USE_CXX11"
+                            ]}
                         ]}
                     ]}
                 ]
