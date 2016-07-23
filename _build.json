@@ -10,7 +10,7 @@
                 },
                 "do":
                 [
-                    {"kind": "None"},
+                    {"kind": "Utility"},
                     {"language": "C++"},
                     {"headeronly": true},
                     {"files": [
