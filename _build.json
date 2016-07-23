@@ -10,7 +10,7 @@
                 },
                 "do":
                 [
-                    {"kind": "StaticLib"},
+                    {"kind": "None"},
                     {"language": "C++"},
                     {"headeronly": true},
                     {"files": [
@@ -30,7 +30,8 @@
                                 {"defines": [
                                     "ARMA_USE_CXX11", 
                                     "ARMA_SURPRESS_CXX11_WARNING"
-                                ]}
+                                ]},
+                                {"flags": "C++11"}
                             ]}
                         ],
                         "otherwise":
