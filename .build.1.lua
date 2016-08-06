@@ -14,7 +14,7 @@ project "Armadillo"
     ]]
 
     if zpm.option( "Cpp11" ) == true then
-
+        print("export c++11")
         zpm.export [[
             flags "C++11"
             defines {
