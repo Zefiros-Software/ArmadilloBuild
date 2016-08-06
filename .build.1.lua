@@ -13,7 +13,7 @@ project "Armadillo"
         includedirs "include/"
     ]]
 
-    if zpm.option( "Cpp11" ) then
+    if zpm.option( "Cpp11" ) == true then
 
         zpm.export [[
             flags "C++11"
