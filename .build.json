@@ -1,49 +1,6 @@
 [
     {
         "version": ">6.0.0 || @head",
-        "projects":
-        [
-            {
-                "project": "Armadillo",
-                "options": {
-                    "Cpp11": true
-                },
-                "do":
-                [
-                    {"kind": "Utility"},
-                    {"language": "C++"},
-                    {"headeronly": true},
-                    {"files": [
-                       "include/**.hpp",
-                       "include/armadillo" 
-                    ]},
-                    {"export":[
-                        {"includedirs": "include/"}
-                    ]},
-                    {
-                        "filter-options": {
-                            "Cpp11": true
-                        },
-                        "do":
-                        [
-                            {"export":[
-                                {"defines": [
-                                    "ARMA_USE_CXX11", 
-                                    "ARMA_SURPRESS_CXX11_WARNING"
-                                ]},
-                                {"flags": "C++11"}
-                            ]}
-                        ],
-                        "otherwise":
-                        [
-                            {"export":[
-                                {"defines": "ARMA_DONT_USE_CXX11"}
-                            ]}
-                        ]
-                    }
-                ]
-        
-            }
-        ]
+        "file": ".build.1.lua"
     }
 ]
