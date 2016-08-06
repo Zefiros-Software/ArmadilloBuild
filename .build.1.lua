@@ -1,7 +1,6 @@
 
 project "Armadillo"
 
-    language "C++"
     kind "Utility"
 
     files {        
@@ -23,6 +22,7 @@ project "Armadillo"
             }
         ]]
     else
+        print("export c++11 failed")
         zpm.export [[
             defines "ARMA_DONT_USE_CXX11"
         ]]
