@@ -5,5 +5,8 @@
     "license": "Mozilla Public License (MPL) 2.0",
     "options": {        
         "Cpp11": true
+    },
+    "settings": {
+        "Lapack": "Auto"
     }
 }
