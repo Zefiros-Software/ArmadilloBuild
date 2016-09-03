@@ -27,48 +27,48 @@ project "Armadillo"
     end
 
     if zpm.setting( "Lapack" ) == "Auto" then
+        local icpp = os.getenv("ICPP_COMPILER16")
 
-        zpm.export [[
-            defines "ARMA_USE_MKL_ALLOC"
-        ]]
-
-        filter "architecture:x86_64"
-            local mkl = os.getenv("ICPP_COMPILER16") .. "/mkl/lib/intel64/"
+        if icpp ~= nil then
 
             zpm.export [[
+                defines "ARMA_USE_MKL_ALLOC"
                 includedirs {
-                    os.getenv("ICPP_COMPILER16") .. "/mkl/include"
+                    "%ICPP_COMPILER16%/mkl/include"
                 }	
+            ]]        
+            
+            filter "architecture:x86_64"
+                local mkl = "%ICPP_COMPILER16%/mkl/lib/intel64/"
 
-                links {            
-                    mkl .. "mkl_blas95_lp64.lib",
-                    mkl .. "mkl_core.lib",
-                    mkl .. "mkl_intel_lp64.lib",
-                    mkl .. "mkl_lapack95_lp64.lib",
-                    mkl .. "mkl_rt.lib",
-                    mkl .. "mkl_sequential.lib",
-                    mkl .. "mkl_tbb_thread.lib"
-                }
-            ]]
+                zpm.export(function()
+                    links {            
+                        mkl .. "mkl_blas95_lp64.lib",
+                        mkl .. "mkl_core.lib",
+                        mkl .. "mkl_intel_lp64.lib",
+                        mkl .. "mkl_lapack95_lp64.lib",
+                        mkl .. "mkl_rt.lib",
+                        mkl .. "mkl_sequential.lib",
+                        mkl .. "mkl_tbb_thread.lib"
+                    }
+                end)
 
-        filter "architecture:x86"
-            local mkl = os.getenv("ICPP_COMPILER16") .. "/mkl/lib/ia32/"
+            filter "architecture:x86"
+                local mkl = "%ICPP_COMPILER16%/mkl/lib/ia32/"
 
-            zpm.export [[
-                includedirs {
-                    os.getenv("ICPP_COMPILER16") .. "/mkl/include"
-                }	
+                zpm.export(function()
+                    links {            
+                        mkl .. "mkl_blas95.lib",
+                        mkl .. "mkl_core.lib",
+                        mkl .. "mkl_intel_c.lib",
+                        mkl .. "mkl_lapack95.lib",
+                        mkl .. "mkl_rt.lib",
+                        mkl .. "mkl_sequential.lib",
+                        mkl .. "mkl_tbb_thread.lib"
+                    }
+                end)
 
-                links {            
-                    mkl .. "mkl_blas95.lib",
-                    mkl .. "mkl_core.lib",
-                    mkl .. "mkl_intel_c.lib",
-                    mkl .. "mkl_lapack95.lib",
-                    mkl .. "mkl_rt.lib",
-                    mkl .. "mkl_sequential.lib",
-                    mkl .. "mkl_tbb_thread.lib"
-                }
-            ]]
+            filter {}
 
-        filter {}
+        end
     end
