@@ -16,7 +16,7 @@ project "Armadillo"
         zpm.export [[
             flags "C++11"
             defines {
-                "ARMA_SURPRESS_CXX11_WARNING",
+                "ARMA_DONT_PRINT_CXX11_WARNING",
                 "ARMA_USE_CXX11",
             }
         ]]
