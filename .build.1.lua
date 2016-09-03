@@ -26,8 +26,9 @@ project "Armadillo"
         ]]
     end
 
+    print(zpm.setting("Lapack"))
     if zpm.setting( "Lapack" ) == "Auto" then
-    
+        print("22@@@@")
         zpm.export [[
             defines "ARMA_USE_MKL_ALLOC"
         ]]
