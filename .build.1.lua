@@ -27,6 +27,10 @@ project "Armadillo"
     end
 
     if zpm.setting( "Lapack" ) == "Auto" then
+    
+        zpm.export [[
+            defines "ARMA_USE_MKL_ALLOC"
+        ]]
 
         filter "architecture:x86_64"
             local mkl = os.getenv("ICPP_COMPILER16") .. "/mkl/lib/intel64/"
