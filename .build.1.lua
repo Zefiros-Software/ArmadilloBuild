@@ -38,10 +38,10 @@ project "Armadillo"
                 }	
             ]]        
             
-            filter "architecture:x86_64"
+            zpm.export(function()
+                
                 local mkl = "%ICPP_COMPILER16%/mkl/lib/intel64/"
-
-                zpm.export(function()
+                filter "architecture:x86_64"
                     links {            
                         mkl .. "mkl_blas95_lp64.lib",
                         mkl .. "mkl_core.lib",
@@ -50,13 +50,10 @@ project "Armadillo"
                         mkl .. "mkl_rt.lib",
                         mkl .. "mkl_sequential.lib",
                         mkl .. "mkl_tbb_thread.lib"
-                    }
-                end)
+                    }                    
 
-            filter "architecture:x86"
                 local mkl = "%ICPP_COMPILER16%/mkl/lib/ia32/"
-
-                zpm.export(function()
+                filter "architecture:x86"
                     links {            
                         mkl .. "mkl_blas95.lib",
                         mkl .. "mkl_core.lib",
@@ -66,9 +63,10 @@ project "Armadillo"
                         mkl .. "mkl_sequential.lib",
                         mkl .. "mkl_tbb_thread.lib"
                     }
-                end)
 
-            filter {}
+                filter {}
+                
+            end)
 
         end
     end
