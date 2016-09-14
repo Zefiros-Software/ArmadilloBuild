@@ -7,6 +7,8 @@ project "Armadillo"
     filter { "action:xcode4" }
             kind "StaticLib"
 
+    filter {}
+
     files {        
         "include/**.hpp",
         "include/armadillo" 
