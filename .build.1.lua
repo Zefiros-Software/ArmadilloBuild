@@ -5,10 +5,10 @@ project "Armadillo"
         kind "Utility"
 
     filter "platforms:Unix"
-        kind "StaticLib"
+        kind "Utility"
 
     filter "platforms:Mac"
-        kind "StaticLib"
+        kind "Utility"
 
     filter {}
 
