@@ -1,13 +1,11 @@
 
 project "Armadillo"
 
-    filter { "action:not xcode4" }
-            kind "Utility"
+    kind "Utility"
 
-    filter { "action:xcode4" }
+    if _ACTION == "xcode4" then
             kind "StaticLib"
-
-    filter {}
+    end
 
     files {        
         "include/**.hpp",
