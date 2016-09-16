@@ -1,16 +1,7 @@
 
 project "Armadillo"
 
-    filter "platforms:Windows"
-        kind "Utility"
-
-    filter "platforms:Unix"
-        kind "Utility"
-
-    filter "platforms:Mac"
-        kind "Utility"
-
-    filter {}
+    kind "StaticLib"
 
     files {        
         "include/**.hpp",
