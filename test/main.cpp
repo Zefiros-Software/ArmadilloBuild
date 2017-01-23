@@ -24,11 +24,18 @@
 
 #include <stdint.h>
 
-TEST( UtilTest, FloatUInt32Max )
+TEST( UtilTest, 1 )
 {
     arma::vec v = {1,2,3};
     v += v;
     EXPECT_EQ( v[0], 2 );
+}
+
+TEST( UtilTest, 2 )
+{
+    arma::vec v = {1,2,3};
+    arma::vec v2 = {1,2,3};
+    EXPECT_EQ( 10, v * v2 );
 }
 
 int main( int argc, char **argv )
