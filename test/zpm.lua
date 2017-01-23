@@ -1,8 +1,8 @@
 
 workspace "Armadillo"
-   configurations { "Test" }
-
-   startproject "Armadillo"
+    configurations { "Test" }
+    architecture "x86"
+    startproject "Armadillo"
 
     project "Armadillo"
         kind "ConsoleApp"

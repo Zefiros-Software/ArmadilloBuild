@@ -1,7 +1,7 @@
 function getICCVersion()
     versions = {"ICPP_COMPILER17", "ICPP_COMPILER16", "ICPP_COMPILER15"}
     for _, version in pairs(versions) do
-        if os.getenv(version) then
+        if os.getenv(version) ~= "" then
             return os.getenv(version)
         end
     end
@@ -35,43 +35,39 @@ project "Armadillo"
 
     if zpm.setting( "Lapack" ) == "Auto" then
         local icpp = getICCVersion()
-
+        
         if icpp ~= nil then
 
             zpm.export(function()
+                local includes = path.join(icpp, "mkl/include/")
                 defines "ARMA_USE_MKL_ALLOC"
-                includedirs {
-                    path.join(icpp, "/mkl/include/")
-                }	
-            end)
-            
-            zpm.export(function()
+                includedirs(includes)
                 
-                local mkl = path.join(icpp, "/mkl/lib/intel64/")
-                filter "architecture:x86_64"
+                local mkl = path.join(icpp, "mkl/lib/intel64/")
+                filter "architecture:not x86"
                     links {            
-                        mkl .. "mkl_blas95_lp64.lib",
-                        mkl .. "mkl_core.lib",
-                        mkl .. "mkl_intel_lp64.lib",
-                        mkl .. "mkl_lapack95_lp64.lib",
-                        mkl .. "mkl_rt.lib",
-                        mkl .. "mkl_sequential.lib",
-                        mkl .. "mkl_tbb_thread.lib"
-                    }                    
+                        mkl .. "/mkl_blas95_lp64.lib",
+                        mkl .. "/mkl_core.lib",
+                        mkl .. "/mkl_intel_lp64.lib",
+                        mkl .. "/mkl_lapack95_lp64.lib",
+                        mkl .. "/mkl_rt.lib",
+                        mkl .. "/mkl_sequential.lib",
+                        mkl .. "/mkl_tbb_thread.lib"
+                    }                 
 
-                local mkl = path.join(icpp, "/mkl/lib/ia32/")
+                local mkl = path.join(icpp, "mkl/lib/ia32/")
                 filter "architecture:x86"
                     links {            
-                        mkl .. "mkl_blas95.lib",
-                        mkl .. "mkl_core.lib",
-                        mkl .. "mkl_intel_c.lib",
-                        mkl .. "mkl_lapack95.lib",
-                        mkl .. "mkl_rt.lib",
-                        mkl .. "mkl_sequential.lib",
-                        mkl .. "mkl_tbb_thread.lib"
+                        mkl .. "/mkl_blas95.lib",
+                        mkl .. "/mkl_core.lib",
+                        mkl .. "/mkl_intel_c.lib",
+                        mkl .. "/mkl_lapack95.lib",
+                        mkl .. "/mkl_rt.lib",
+                        mkl .. "/mkl_sequential.lib",
+                        mkl .. "/mkl_tbb_thread.lib"
                     }
 
-                filter "configuration:*Release"
+                filter "*Release"
                     defines "ARMA_NO_DEBUG"
 
                 filter {}
