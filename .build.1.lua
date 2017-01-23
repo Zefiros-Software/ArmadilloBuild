@@ -1,3 +1,13 @@
+function getICCVersion()
+    versions = ["ICPP_COMPILER17", "ICPP_COMPILER16", "ICPP_COMPILER15"]
+    for _, version in pairs(versions) do
+        if os.getenv(version) then
+            return os.getenv(version)
+        end
+    end
+
+    return nil
+end
 
 project "Armadillo"
 
@@ -8,39 +18,36 @@ project "Armadillo"
         "include/armadillo" 
     }
 
-    zpm.export [[
-        includedirs "include/"
-    ]]
+    zpm.export(function()
 
-    if zpm.option( "Cpp11" ) then
-        zpm.export [[
+        includedirs "include/"
+
+        if zpm.option( "Cpp11" ) then
             flags "C++11"
             defines {
                 "ARMA_DONT_PRINT_CXX11_WARNING",
                 "ARMA_USE_CXX11",
             }
-        ]]
-    else
-        zpm.export [[
+        else
             defines "ARMA_DONT_USE_CXX11"
-        ]]
-    end
+        end
+    end)
 
     if zpm.setting( "Lapack" ) == "Auto" then
-        local icpp = os.getenv("ICPP_COMPILER16")
+        local icpp = getICCVersion()
 
         if icpp ~= nil then
 
-            zpm.export [[
+            zpm.export(function()
                 defines "ARMA_USE_MKL_ALLOC"
                 includedirs {
-                    "%ICPP_COMPILER16%/mkl/include"
+                    path.join(icpp, "/mkl/include/")
                 }	
-            ]]        
+            end)
             
             zpm.export(function()
                 
-                local mkl = "%ICPP_COMPILER16%/mkl/lib/intel64/"
+                local mkl = path.join(icpp, "/mkl/lib/intel64/")
                 filter "architecture:x86_64"
                     links {            
                         mkl .. "mkl_blas95_lp64.lib",
@@ -52,7 +59,7 @@ project "Armadillo"
                         mkl .. "mkl_tbb_thread.lib"
                     }                    
 
-                local mkl = "%ICPP_COMPILER16%/mkl/lib/ia32/"
+                local mkl = path.join(icpp, "/mkl/lib/ia32/")
                 filter "architecture:x86"
                     links {            
                         mkl .. "mkl_blas95.lib",
@@ -64,9 +71,18 @@ project "Armadillo"
                         mkl .. "mkl_tbb_thread.lib"
                     }
 
+                filter "configuration:*Release"
+                    defines "ARMA_NO_DEBUG"
+
                 filter {}
                 
             end)
 
+        else
+            defines {
+                "ARMA_USE_SUPERLU",
+                "ARMA_USE_BLAS",
+                "ARMA_USE_ARPACK"
+            }
         end
     end
