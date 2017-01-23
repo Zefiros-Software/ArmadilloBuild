@@ -1,5 +1,5 @@
 function getICCVersion()
-    versions = ["ICPP_COMPILER17", "ICPP_COMPILER16", "ICPP_COMPILER15"]
+    versions = {"ICPP_COMPILER17", "ICPP_COMPILER16", "ICPP_COMPILER15"}
     for _, version in pairs(versions) do
         if os.getenv(version) then
             return os.getenv(version)
