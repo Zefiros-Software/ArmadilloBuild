@@ -50,7 +50,6 @@ project "Armadillo"
                         mkl .. "/mkl_core.lib",
                         mkl .. "/mkl_intel_lp64.lib",
                         mkl .. "/mkl_lapack95_lp64.lib",
-                        mkl .. "/mkl_rt.lib",
                         mkl .. "/mkl_sequential.lib",
                         mkl .. "/mkl_tbb_thread.lib"
                     }                 
@@ -62,7 +61,6 @@ project "Armadillo"
                         mkl .. "/mkl_core.lib",
                         mkl .. "/mkl_intel_c.lib",
                         mkl .. "/mkl_lapack95.lib",
-                        mkl .. "/mkl_rt.lib",
                         mkl .. "/mkl_sequential.lib",
                         mkl .. "/mkl_tbb_thread.lib"
                     }
