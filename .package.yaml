@@ -1,0 +1,20 @@
+description: Armadillo is a high quality C++ linear algebra library, aiming towards a good balance between speed and ease of use.
+keywords:
+  - Armadillo
+  - Vecors
+  - Matrices
+  - Cubeses
+website: http://arma.sourceforge.net/
+license: Mozilla Public License (MPL) 2.0
+public:
+  libraries:
+    - name: Zefiros-Software/MKL
+      version: '@head'
+      optional: true
+      settings:
+        blas95: true
+        core: true
+        lapack95: true
+        rt: true
+        sequential: true
+        tbb: true

@@ -1,0 +1,40 @@
+{
+  "definition": "./",
+  "optionals": [],
+  "private": {
+    "libraries": [ {
+      "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
+      "hash": "ca102b1f9d1f4c8a8c6f7a87b3e80d0af4b8789f",
+      "name": "Zefiros-Software/GoogleTest",
+      "optionals": [],
+      "repository": "https://github.com/google/googletest.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    }, {
+      "definition": "../",
+      "hash": "d6d12e134914417a2a95655610a7419a25284ed2",
+      "name": "Zefiros-Software/Armadillo",
+      "optionals": {
+        "libraries": [ {
+          "name": "Zefiros-Software/MKL",
+          "versionRequirements": "@head"
+        } ]
+      },
+      "repository": "https://github.com/conradsnicta/armadillo-code.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    } ]
+  },
+  "public": {
+    "libraries": [ {
+      "definition": "https://github.com/Zefiros-Software/MKL.git",
+      "hash": "16b28f71bcea4d5a551d8247f288aeafe705a3a6",
+      "name": "Zefiros-Software/MKL",
+      "optionals": [],
+      "repository": "https://github.com/Zefiros-Software/MKL.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    } ]
+  },
+  "repository": "./"
+}
