@@ -17,4 +17,3 @@ public:
         lapack95: true
         rt: true
         sequential: true
-        tbb: true

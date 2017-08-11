@@ -1,13 +1,4 @@
-function getICCVersion()
-    versions = {"ICPP_COMPILER17", "ICPP_COMPILER16", "ICPP_COMPILER15"}
-    for _, version in pairs(versions) do
-        if os.getenv(version) ~= "" then
-            return os.getenv(version)
-        end
-    end
-    
-    return nil
-end
+local hasMKL = zpm.has "Zefiros-Software/MKL"
 
 project "Armadillo"
 
@@ -27,9 +18,15 @@ project "Armadillo"
             "ARMA_DONT_PRINT_CXX11_WARNING",
             "ARMA_USE_CXX11",
         }
+        
+        if hasMKL then
+            defines "ARMA_USE_MKL_ALLOC"
+        end
+
+        filter "*Release"
+            defines "ARMA_NO_DEBUG"
+
+        filter {}
     end)
 
-    if zpm.configuration("lapack", "mkl"):lower() == "mkl" then
-
-        zpm.uses "Zefiros-Software/MKL"
-    end
+    zpm.uses "Zefiros-Software/MKL"   

@@ -1,10 +1,9 @@
 {
   "definition": "./",
-  "optionals": [],
   "private": {
     "libraries": [ {
       "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
-      "hash": "ca102b1f9d1f4c8a8c6f7a87b3e80d0af4b8789f",
+      "hash": "f8d909d095ecdac63f85467d9bb0cfd385be77bd",
       "name": "Zefiros-Software/GoogleTest",
       "optionals": [],
       "repository": "https://github.com/google/googletest.git",
