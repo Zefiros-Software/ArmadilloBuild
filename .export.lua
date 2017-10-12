@@ -21,6 +21,8 @@ project "Armadillo"
         
         if hasMKL then
             defines "ARMA_USE_MKL_ALLOC"
+        else
+            defines "ARMA_DONT_USE_BLAS"
         end
 
         filter "*Release"
