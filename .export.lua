@@ -29,4 +29,6 @@ project "Armadillo"
         filter {}
     end)
 
-    zpm.uses "Zefiros-Software/MKL"   
+    if not zpm.uses "Zefiros-Software/MKL" then
+        warningf("No BLAS implementation linked, not all features may work!")
+    end

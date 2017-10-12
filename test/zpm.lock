@@ -3,15 +3,14 @@
   "private": {
     "libraries": [ {
       "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
-      "hash": "f8d909d095ecdac63f85467d9bb0cfd385be77bd",
+      "hash": "f1a87d73fc604c5ab8fbb0cc6fa9a86ffd845530",
       "name": "Zefiros-Software/GoogleTest",
-      "optionals": [],
       "repository": "https://github.com/google/googletest.git",
       "tag": "HEAD",
       "versionRequirement": "@head"
     }, {
       "definition": "../",
-      "hash": "d6d12e134914417a2a95655610a7419a25284ed2",
+      "hash": "2712267857492b27d8659a24030ad336ef2a9291",
       "name": "Zefiros-Software/Armadillo",
       "optionals": {
         "libraries": [ {
@@ -27,9 +26,8 @@
   "public": {
     "libraries": [ {
       "definition": "https://github.com/Zefiros-Software/MKL.git",
-      "hash": "16b28f71bcea4d5a551d8247f288aeafe705a3a6",
+      "hash": "58d5ec3e7bb4f611daf70795f504c471e385a90a",
       "name": "Zefiros-Software/MKL",
-      "optionals": [],
       "repository": "https://github.com/Zefiros-Software/MKL.git",
       "tag": "HEAD",
       "versionRequirement": "@head"
