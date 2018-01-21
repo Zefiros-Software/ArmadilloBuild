@@ -1,5 +1,7 @@
 /**
- * Copyright (c) 2016 Mick van Duijn, Koen Visscher and Paul Visscher
+ * @cond ___LICENSE___
+ *
+ * Copyright (c) 2016-2018 Zefiros Software.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -18,29 +20,31 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ *
+ * @endcond
  */
 #include "gtest/gtest.h"
 #include <armadillo>
 
 #include <stdint.h>
 
-TEST( UtilTest, 1 )
+TEST(UtilTest, 1)
 {
     arma::vec v = {1, 2, 3};
     v += v;
-    EXPECT_EQ( v[0], 2 );
+    EXPECT_EQ(v[0], 2);
 }
 
-TEST( UtilTest, 2 )
+TEST(UtilTest, 2)
 {
     arma::vec v = {1, 2, 3};
     arma::vec v2 = { 1, 2, 3 };
     //EXPECT_EQ( 14, arma::dot( v, v2 ) );
 }
 
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
-    testing::InitGoogleTest( &argc, argv );
+    testing::InitGoogleTest(&argc, argv);
 
     int32_t result = RUN_ALL_TESTS();
 

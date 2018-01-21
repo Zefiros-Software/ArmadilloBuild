@@ -1,21 +1,25 @@
 {
   "definition": "./",
+  "optionals": [],
   "private": {
     "libraries": [ {
       "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
-      "hash": "f1a87d73fc604c5ab8fbb0cc6fa9a86ffd845530",
+      "hash": "62ba5d91d0ceff98fbd95294bd94c97017a07f9e",
       "name": "Zefiros-Software/GoogleTest",
       "repository": "https://github.com/google/googletest.git",
       "tag": "HEAD",
       "versionRequirement": "@head"
     }, {
       "definition": "../",
-      "hash": "2712267857492b27d8659a24030ad336ef2a9291",
+      "hash": "b4f262f815afedddd0a085bd49fc90b948df8441",
       "name": "Zefiros-Software/Armadillo",
       "optionals": {
         "libraries": [ {
           "name": "Zefiros-Software/MKL",
-          "versionRequirements": "@head"
+          "versionRequirement": "@head"
+        }, {
+          "name": "Zefiros-Software/MKL",
+          "versionRequirement": "@head"
         } ]
       },
       "repository": "https://github.com/conradsnicta/armadillo-code.git",
@@ -29,6 +33,32 @@
       "hash": "58d5ec3e7bb4f611daf70795f504c471e385a90a",
       "name": "Zefiros-Software/MKL",
       "repository": "https://github.com/Zefiros-Software/MKL.git",
+      "tag": "HEAD",
+      "versionRequirement": "@head"
+    } ],
+    "modules": [ {
+      "definition": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
+      "hash": "eba72993260266c19c1f141b7a13e279794fe488",
+      "name": "Zefiros-Software/Defaults",
+      "public": {
+        "libraries": [ {
+          "definition": "https://github.com/Zefiros-Software/GoogleTest.git",
+          "hash": "b4d333f14f977b3668de4e794d7d2e00b322d59a",
+          "name": "Zefiros-Software/GoogleTest",
+          "repository": "https://github.com/google/googletest.git",
+          "tag": "release-1.4.0",
+          "version": "1.4.0",
+          "versionRequirement": "@head || ^1.0.0"
+        }, {
+          "definition": "https://github.com/Zefiros-Software/GoogleBenchmark.git",
+          "hash": "4fe0206b658c6aa1d74a2278c26b50f0938a4e64",
+          "name": "Zefiros-Software/GoogleBenchmark",
+          "repository": "https://github.com/google/benchmark.git",
+          "tag": "HEAD",
+          "versionRequirement": "@head"
+        } ]
+      },
+      "repository": "https://github.com/Zefiros-Software/ZefirosDefaults.git",
       "tag": "HEAD",
       "versionRequirement": "@head"
     } ]

@@ -1,0 +1,23 @@
+sudo: required
+language: generic
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+    env: VERSION=6
+  - os: linux
+    dist: trusty
+    env: VERSION=7
+  - os: linux
+    dist: trusty
+    env: VERSION=5
+  - os: osx
+    osx_image: xcode8
+    language: generic
+install:
+- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/features/refactor/script/install-zpm.sh)"
+script:
+- cd test && zpm run test-definition Armadillo
+notifications:
+  slack:
+    secure: G2b6erjmb3Od32IEw0PqdCUJKeXZCTACsixeKeQEaciCPwebag+LInmZ8POHvfn/qylPG7D/x2w+gLqis4Ho4wwNhlzoYZMW8dwSm7wMkgy0MHNH8qEnSi1LOJ2qwsz1tklBM5EzwKJ4vVCAaQNj2520+aXr/eDL+RJs9HvW9twzmyMSFzLJ+HlLyxEm96FvDIQcsIR5p0U081KsZkNT/Y+90i5+u3O1g451BW0v+8bBGHsOukCLx3mksLGpvOOmjrJlT3ek4LUc+47dUuDGlIgU7dqwV0Dk7x5aaafZCQFmRiFQXi7dBaop1+mQ9c76Jc0I563iCk1bU9vN8P9IqkcDbP4hipatWy/mrmMKbQCi19zXOqAcs5urc7H0T961s8mWWnf/9xXUCiZspZXUQhmjHJjL2ZvukRw2ci0pFCRVdAfXtVz9YRDAY0GvwTJwQMLYLD+aI3Z1Vd+mbAS2lJcO8mbcOXRAEfs/Z3eMNHjlRW4EymciZCU2LtJddFYmDRMimfZqi7kreeAVGF883lgenFEgVqo6NvTAALoeGdYy6qlH9jNs5fWvvOOOqG2LYof1iepmQ0elZIbHQ8Qbq2RrXWMV7yClQR++36OIHU88NEnEOlbHC057obPzDcgKs5QYP/0IX8xwZ4j7Xl1jCGFTjEjh8Y424GMUrp4v4Dw=
