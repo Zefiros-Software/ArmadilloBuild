@@ -5,9 +5,6 @@ libraries:
     version: '@head'
     definition: ../
 public:
-  libraries:
-    - name: Zefiros-Software/MKL
-      version: '@head'
   modules:
     - name: Zefiros-Software/Defaults
       version: '@head'
