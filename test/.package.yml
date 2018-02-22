@@ -1,6 +1,4 @@
 libraries:
-  - name: Zefiros-Software/GoogleTest
-    version: '@head'
   - name: Zefiros-Software/Armadillo
     version: '@head'
     definition: ../
