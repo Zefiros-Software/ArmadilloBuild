@@ -15,5 +15,4 @@ public:
         blas95: true
         core: true
         lapack95: true
-        rt: true
         sequential: true
