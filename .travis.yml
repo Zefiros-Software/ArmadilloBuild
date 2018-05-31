@@ -2,19 +2,23 @@ sudo: required
 language: generic
 matrix:
   include:
-    - os: linux
-      dist: trusty
-      env: VERSION=6
-    - os: linux
-      dist: trusty
-      env: VERSION=7
-    - os: linux
-      dist: trusty
-      env: VERSION=5
-    - os: osx
-      osx_image: xcode8
-      language: generic
+  - os: linux
+    dist: trusty
+    env: VERSION=6
+  - os: linux
+    dist: trusty
+    env: VERSION=7
+  - os: osx
+    osx_image: xcode9.2
+    language: generic
+global:
+  env:
+  - PROJECT=Armadillo
+  - PROJECT_TEMPLATE=default
 install:
-  - source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/features/refactor/script/install-zpm.sh)"
+- source /dev/stdin <<< "$(curl -s https://raw.githubusercontent.com/Zefiros-Software/ZPM/dev/script/install-zpm.sh)"
 script:
-  - 'cd test && zpm run test-definition Armadillo'
+- cd test && zpm run test-definition Armadillo
+notifications:
+  slack:
+    secure: SxauFJmj8JNmRljfrK11aEbO341/irKXz+yNevKmitbVb+dMZkVIP+Crd/tz9YFO2H6rMtthsBatq+U5iD1HZkJCwXh01LguJyruU8WGNGBch4JBDnjMmB3Uv3FuhrmHq1vkJQRZGuEnIEIlO8E3DY7ZhfO2TJ6O+ax0EYBuYwgDGZSK8iB0yeVDQbQr1A7IXuayOcB931sNeR9Jz/M+UoblW7BjFR50UI63lfKautc0grxfU7xJc9XlRl+uegxuoutv12j+66R5xMb73SYS5jzob+M9d4y+UzKRtdDZQUD12boXqM/AQCgs0j1M1lMvQ74B/QCL0xUiDT94e8aFm6TcgHcQPEGh0lHZh8c10d6rCK3TwcKjSTZqP9dsg9pcQFnwdbdU+qiZ/No8Jmrk9+wv7wib35mwB2dn3Z6BtHwmve3+8FnvraHccL+2a2O3MzhXy0R8feMBtECog1vzsRGldvE1H5ZIH5J3yMBxseSgkrzkbgvUKYAcSs+Kxm2rFZIBkCPNp37Z1Hpj3afYxHoyvd5fdNlmkmHsUcsOhyab2ep1stObNKhQxgHoVkxD+5s8Ugg9oubqMednU3TjVGjsk3aFWOVgCbqIUgNwvL6REAZc/eVfyosqTgv1oO9IYct6WMbvsQYiM+3YLojYyNda8PQF1NU4F/M65rAwDRI=
